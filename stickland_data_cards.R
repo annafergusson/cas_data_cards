@@ -81,7 +81,7 @@ for(i in 1:length(cards)){
 }
 
 
-# this code assembles them into pages for a PDF
+# this code assembles the data cards into pages for a PDF
 # for printing etc.
 
 # six across, three down
@@ -90,10 +90,9 @@ pages <- split(cards,
                ceiling(seq_along(cards)/cards_per_page))
 
 make_page <- function(card_imgs) {
-  # using A4 paper size 300dpi :)
-  # landscape
-  page_width <- 3508
-  page_height <- 2480
+  # using A4 paper size 150dpi :)
+  page_width <- 1754
+  page_height <- 1240
   margin <- 30
   card_width <- floor((page_width - 2*margin)/6)
   card_height <- ceiling((height * card_width)/width)
