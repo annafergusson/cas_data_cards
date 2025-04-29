@@ -3,7 +3,7 @@ library(magick)
 library(glue)
 
 # read in data
-cas_data <- read_csv("CAS2015_edited.csv")
+cas_data <- read_csv("CAS2015_edited.csv") 
 
 # dimension of each data card in pixels
 width <- 460
@@ -59,6 +59,9 @@ make_card <- function(row) {
   
   return(card)
 }
+
+# make one card
+cas_data %>% slice(1) %>% make_card()
 
 # make all the cards
 cards <- map(1 : nrow(cas_data), function(i){
